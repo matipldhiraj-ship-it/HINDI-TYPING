@@ -1,0 +1,8 @@
+{
+  "name": "Hindi Typing Master Pro",
+  "description": "A professional, full-stack platform to master Hindi typing layouts, from beginner lessons to government exam simulations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

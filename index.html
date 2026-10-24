@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function() {
+        try {
+          var originalFetch = window.fetch;
+          var customFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return customFetch || originalFetch;
+            },
+            set: function(fn) {
+              customFetch = fn;
+            }
+          });
+        } catch (e) {
+          try {
+            var protoFetch = Window.prototype.fetch;
+            var customProtoFetch = protoFetch;
+            Object.defineProperty(Window.prototype, 'fetch', {
+              configurable: true,
+              enumerable: true,
+              get: function() {
+                return customProtoFetch || protoFetch;
+              },
+              set: function(fn) {
+                customProtoFetch = fn;
+              }
+            });
+          } catch (e2) {}
+        }
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hindi Typing Master Pro — Professional Tutor & Government Exam Simulator</title>
+    <meta name="description" content="Professional Hindi typing tutor and government exam simulator supporting Unicode InScript, Remington GAIL, Remington CBI, Kruti Dev 010 legacy mapping, and Phonetic Hindi with comprehensive Admin Dashboard and User Authentication." />
+    <meta property="og:title" content="Hindi Typing Master Pro — Professional Tutor & Government Exam Simulator" />
+    <meta property="og:description" content="Professional Hindi typing tutor and government exam simulator supporting Unicode InScript, Remington GAIL, Remington CBI, Kruti Dev 010 legacy mapping, and Phonetic Hindi with comprehensive Admin Dashboard and User Authentication." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      try {
+        var savedTheme = localStorage.getItem('hmp_theme_mode') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-sky-600 selection:text-white transition-colors duration-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
